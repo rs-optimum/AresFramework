@@ -56,16 +56,25 @@ public class PluginLoader : AssemblyLoadContext
     /// </summary>
     public static async void LoadPluginsExternalPlugins()
     {
-        var files = Directory.GetFiles(PluginPath, "*.dll");
-        
-        foreach (var file in files)
+        var directories = Directory.GetDirectories(PluginPath);
+
+        foreach (var directory in directories)
+        {
+            var files = Directory.GetFiles(directory, "*.dll");
+            LoadAssemblies(files);
+        }
+    }
+
+    public static void LoadAssemblies(string[] assemblies)
+    {
+        foreach (var file in assemblies)
         {
             var plugin = LoadPlugin(file);
             if (plugin != null)
             {
                 PluginAssemblies.Add(plugin);
             }
-        }
+        }  
     }
     
     private static Assembly? LoadPlugin(string pluginLocation)
