@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+        <HintPath>..\..\..\..\.nuget\packages\microsoft.extensions.logging.abstractions\5.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="NLog">
+        <HintPath>..\..\..\..\.nuget\packages\nlog\5.0.4\lib\netstandard2.0\NLog.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="5.0.4" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AresFramework.Cache.Model\AresFramework.Cache.Model.csproj" />
+      <ProjectReference Include="..\AresFramework.Cache\AresFramework.Cache.csproj" />
+      <ProjectReference Include="..\AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj" />
+      <ProjectReference Include="..\AresFramework.ServiceDependencies\AresFramework.ServiceDependencies.csproj" />
+    </ItemGroup>
+
+</Project>

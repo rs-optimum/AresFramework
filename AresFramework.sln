@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.GameEngine", "AresFramework.GameEngine\AresFramework.GameEngine.csproj", "{37F8941B-4B79-4ABF-81A3-BA344DD8D73B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Networking", "AresFramework.Networking\AresFramework.Networking.csproj", "{033865A7-D7CC-47A1-AA28-DB22D8AC1360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Cache", "AresFramework.Cache\AresFramework.Cache.csproj", "{86D56D71-4E15-469B-BA92-8220680196F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Module", "AresFramework.Plugin.Module\AresFramework.Plugin.Module.csproj", "{B33FFD82-D9E9-480E-AE78-478369DEA24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Model", "AresFramework.Model\AresFramework.Model.csproj", "{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Loaders", "AresFramework.Plugin.Loaders\AresFramework.Plugin.Loaders.csproj", "{1952684B-CD42-4A80-A32F-1BD8A15794C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Model.Tests", "AresFramework.Model.Tests\AresFramework.Model.Tests.csproj", "{F32ED946-4FF8-4642-A603-32D347B331C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.GameEngine.Tasks", "AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj", "{51B671A1-11F2-41CA-A877-7E495584CC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Utilities", "AresFramework.Utilities\AresFramework.Utilities.csproj", "{A61C5D68-451D-473D-A900-7CD1BB3F9D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.ServiceDependencies", "AresFramework.ServiceDependencies\AresFramework.ServiceDependencies.csproj", "{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Cache.Model", "AresFramework.Cache.Model\AresFramework.Cache.Model.csproj", "{1653CEDF-4450-441F-B487-4C6AB3814ACC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37F8941B-4B79-4ABF-81A3-BA344DD8D73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F8941B-4B79-4ABF-81A3-BA344DD8D73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F8941B-4B79-4ABF-81A3-BA344DD8D73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F8941B-4B79-4ABF-81A3-BA344DD8D73B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033865A7-D7CC-47A1-AA28-DB22D8AC1360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033865A7-D7CC-47A1-AA28-DB22D8AC1360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033865A7-D7CC-47A1-AA28-DB22D8AC1360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033865A7-D7CC-47A1-AA28-DB22D8AC1360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D56D71-4E15-469B-BA92-8220680196F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D56D71-4E15-469B-BA92-8220680196F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D56D71-4E15-469B-BA92-8220680196F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D56D71-4E15-469B-BA92-8220680196F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33FFD82-D9E9-480E-AE78-478369DEA24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33FFD82-D9E9-480E-AE78-478369DEA24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33FFD82-D9E9-480E-AE78-478369DEA24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33FFD82-D9E9-480E-AE78-478369DEA24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1952684B-CD42-4A80-A32F-1BD8A15794C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1952684B-CD42-4A80-A32F-1BD8A15794C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1952684B-CD42-4A80-A32F-1BD8A15794C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1952684B-CD42-4A80-A32F-1BD8A15794C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32ED946-4FF8-4642-A603-32D347B331C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32ED946-4FF8-4642-A603-32D347B331C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32ED946-4FF8-4642-A603-32D347B331C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32ED946-4FF8-4642-A603-32D347B331C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B671A1-11F2-41CA-A877-7E495584CC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B671A1-11F2-41CA-A877-7E495584CC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B671A1-11F2-41CA-A877-7E495584CC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B671A1-11F2-41CA-A877-7E495584CC63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61C5D68-451D-473D-A900-7CD1BB3F9D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A61C5D68-451D-473D-A900-7CD1BB3F9D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A61C5D68-451D-473D-A900-7CD1BB3F9D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A61C5D68-451D-473D-A900-7CD1BB3F9D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
