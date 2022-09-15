@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AresFramework.GameEngine\AresFramework.GameEngine.csproj" />
       <ProjectReference Include="..\AresFramework.Model\AresFramework.Model.csproj" />
     </ItemGroup>
 

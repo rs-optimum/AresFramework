@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  game:
+    build: .
+    stdin_open: true
+    tty: true
+    ports: 
+      - "${GAME_PORT}:43594"
+    volumes:
+      - "${CACHE_LOCATION}:/app/.ares/Cache/"
+      - "${PLUGINS_LOCATION}:/app/.ares/Plugins/"

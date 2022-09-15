@@ -8,9 +8,6 @@ namespace AresFramework.Model.Tests.Entity.Items.Containers;
 public class ItemContainerTests
 {
     
-    
-    
-    
     [Test]
     public void Set_SetSlot_CorrectlySetSlotItem()
     {

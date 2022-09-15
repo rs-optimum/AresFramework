@@ -5,6 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <OutputType>Exe</OutputType>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <Deterministic>False</Deterministic>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -12,16 +14,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\AresFramework.Plugins.CoreWorld\AresFramework.Plugins.CoreWorld.Plugin\AresFramework.Plugins.CoreWorld.Plugin.csproj" />
       <ProjectReference Include="..\AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Loaders\AresFramework.Plugin.Loaders.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Module\AresFramework.Plugin.Module.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="AresFramework.Plugins.CoreWorld.Plugin">
-        <HintPath>..\..\AresFramework.Plugins.CoreWorld\AresFramework.Plugins.CoreWorld.Plugin\bin\Debug\net6.0\AresFramework.Plugins.CoreWorld.Plugin.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
     <ItemGroup>
@@ -34,6 +29,13 @@
         <None Update="nlog.config">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Settings\world-settings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

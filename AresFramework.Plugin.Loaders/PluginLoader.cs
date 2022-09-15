@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Runtime.Loader;
 using AresFramework.Plugin.Module;
+using AresFramework.Utilities;
 using NLog;
 using NLog.Fluent;
 
@@ -10,7 +11,7 @@ public class PluginLoader : AssemblyLoadContext
 {
     private static readonly Logger Log = LogManager.GetCurrentClassLogger();
     private static readonly HashSet<Assembly> PluginAssemblies = new HashSet<Assembly>();
-    private static readonly string PluginPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/.ares/Plugins/";
+    private static readonly string PluginPath = Constants.AresFolder + "/Plugins/";
     private readonly AssemblyDependencyResolver _resolver;
     public PluginLoader(string pluginPath)
     {

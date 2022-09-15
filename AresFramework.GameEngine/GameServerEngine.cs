@@ -6,13 +6,13 @@ using AresFramework.GameEngine.Tasks;
 using AresFramework.GameEngine.Tasks.Actions;
 using AresFramework.Model.Entity;
 using AresFramework.Model.Entity.Action;
-using AresFramework.Model.Entity.Action.Interactions.Npcs;
 using AresFramework.Model.Entity.Skills;
 using AresFramework.Model.Items;
 using AresFramework.Model.World;
 using AresFramework.Plugin.Loaders;
 using AresFramework.Plugin.Module;
 using AresFramework.ServiceDependencies;
+using AresFramework.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,22 +24,22 @@ namespace AresFramework.GameEngine;
 
 public static class GameServerEngine
 {
-    
     private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-    
     public static ServiceCollection Services = new ServiceCollection();
+    
 
-    public static async Task Main(string[] args)
+    public static void Main(string[] args)
     {
-        
         var config = new ConfigurationBuilder()
-            .SetBasePath(System.IO.Directory
-                .GetCurrentDirectory()) //From NuGet Package Microsoft.Extensions.Configuration.Json
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .SetBasePath(Directory.GetCurrentDirectory()) 
+            .AddJsonFile("Settings/world-settings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile(Constants.AresFolder + "/world-settings.json", optional: true, reloadOnChange: true)
+            .AddEnvironmentVariables()
             .Build();
-        
-        var builder = Host.CreateDefaultBuilder(args);
+        Constants.Configuration = config;
 
+        var builder = Host.CreateDefaultBuilder(args);
+        
         AresServiceCollection.ServiceCollection = new ServiceCollection();
         AresServiceCollection.ServiceCollection.RegisterServices();
 
@@ -112,6 +112,10 @@ public static class GameServerEngine
         ClickNpcHandler.ClickNpc(player, npcAgain2, "pickpocket");
         
         
+        Log.Fatal("Port " + config["GamePort"]);
+        var t = typeof(GameServerEngine).Assembly.GetName().Version;
+        Log.Info("Game Version: " + t);
+        //this is a test 
         /*
         GameCache cache = new GameCache("/home/optimum/.ares/Cache/", FileAccess.ReadWrite);
         cache.LoadCache();
