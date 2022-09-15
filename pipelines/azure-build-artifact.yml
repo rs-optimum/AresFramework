@@ -1,4 +1,4 @@
-name: $(Build.SourceBranch).$(Build.BuildId)
+name: $(ENVIRONMENT).$(Build.BuildId)
 
 trigger:
 - release
@@ -23,12 +23,12 @@ steps:
 - task: CmdLine@2
   displayName: 'Build docker image'
   inputs:
-    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+    script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
 
 - task: CmdLine@2
   displayName: 'Build docker image'
   inputs:
-    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+    script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
 
 
 - task: CmdLine@2
