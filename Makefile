@@ -11,7 +11,7 @@ publish:
 
 .PHONY: test
 test:
-	dotnet test
+	dotnet test --no-build
 
 .PHONY: docker-build
 docker-build:
