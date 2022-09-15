@@ -9,7 +9,7 @@ trigger:
 - staging
 
 pool:
-  vmImage: 'vps-a1373eef'
+  name: Default
 
 variables:
   solution: '**/*.sln'
