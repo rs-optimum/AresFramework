@@ -2,8 +2,7 @@
 .PHONY: build
 build: 
 	dotnet clean
-	dotnet restore
-	dotnet build --no-restore
+	dotnet build
 
 .PHONY: publish
 publish:
