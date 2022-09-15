@@ -83,7 +83,6 @@ public static class GameServerEngine
                 Log.Error($"Error initializing plugin {name.FullName}", ex);
                 return;
             }
-            
             Log.Info($"Plugin Initialized: {attribute.Name}, Description: {attribute.Description}, Version: {attribute.Version}, Author: {attribute.Author}, ");
         });
 
@@ -114,7 +113,7 @@ public static class GameServerEngine
         
         Log.Fatal("Port " + config["GamePort"]);
         var t = typeof(GameServerEngine).Assembly.GetName().Version;
-        Log.Info("Game Version: " + t);
+        Log.Info("Game loaded on the version: " + System.Environment.GetEnvironmentVariable("SERVER_BUILD"));
         //this is a test 
         /*
         GameCache cache = new GameCache("/home/optimum/.ares/Cache/", FileAccess.ReadWrite);

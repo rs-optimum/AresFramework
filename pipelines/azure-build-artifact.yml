@@ -1,15 +1,15 @@
-name: $(Build.SourceBranch).$(Build.BuildId)
+name: $(ENVIRONMENT).$(Build.BuildId)
 
-trigger:
-- release
-- dev
-- staging
+# We want manual intervention here
+trigger: none
+pr: none
 
 pool:
   name: Default
 
 steps:
-  # Builds the server
+  
+  # Builds the server to test
 - task: CmdLine@2
   displayName: 'Build server'
   inputs:
@@ -23,15 +23,14 @@ steps:
 - task: CmdLine@2
   displayName: 'Build docker image'
   inputs:
-    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
-
-- task: CmdLine@2
-  displayName: 'Build docker image'
-  inputs:
-    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
-
-
+    script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
+    
 - task: CmdLine@2
   displayName: 'Publish docker image'
   inputs:
-    script: 'make docker-publish BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+    script: 'make docker-publish BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId) DOCKER_TOKEN=$(DOCKER_TOKEN)'
+    
+- task: CmdLine@2
+  displayName: 'Delete docker image'
+  inputs:
+    script: 'docker image rm rsoptimum/aresframework-gameengine:$(ENVIRONMENT)-v$(Build.BuildId)'
