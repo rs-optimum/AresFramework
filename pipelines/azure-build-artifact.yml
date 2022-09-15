@@ -24,17 +24,11 @@ steps:
   displayName: 'Build docker image'
   inputs:
     script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
-
-- task: CmdLine@2
-  displayName: 'Build docker image'
-  inputs:
-    script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
-
-
+    
 - task: CmdLine@2
   displayName: 'Publish docker image'
   inputs:
-    script: 'make docker-publish BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
+    script: 'make docker-publish BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId) DOCKER_TOKEN=$(DOCKER_TOKEN)'
     
 - task: CmdLine@2
   displayName: 'Delete docker image'

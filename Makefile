@@ -23,7 +23,7 @@ docker-test:
 
 .PHONY: docker-publish
 docker-publish:
-	sudo docker login
+	sudo docker login -u rsoptimum -p $(DOCKER_TOKEN)
 	sudo docker push rsoptimum/aresframework-gameengine:$(BUILD_VERSION)
 
 
