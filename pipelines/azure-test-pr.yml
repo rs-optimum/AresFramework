@@ -21,7 +21,7 @@ steps:
 - task: CmdLine@2
   displayName: 'Install Make'
   inputs:
-    script: 'sudo apt-get install build-essential'
+    script: 'sudo apt-get install -y build-essential '
   
 - task: Docker@2
   displayName: 'Test the solution'
