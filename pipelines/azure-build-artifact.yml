@@ -1,5 +1,8 @@
 name: $(ENVIRONMENT).$(Build.BuildId)
 
+# We want manual intervention here
+trigger: none
+
 pool:
   name: Default
 
@@ -29,4 +32,9 @@ steps:
 - task: CmdLine@2
   displayName: 'Publish docker image'
   inputs:
-    script: 'make docker-publish BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+    script: 'make docker-publish BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
+    
+- task: CmdLine@2
+  displayName: 'Delete docker image'
+  inputs:
+    script: 'docker image rm rsoptimum/aresframework-gameengine:$(ENVIRONMENT)-v$(Build.BuildId)'
