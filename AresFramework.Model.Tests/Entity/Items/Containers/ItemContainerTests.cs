@@ -26,7 +26,6 @@ public class ItemContainerTests
         Assert.AreEqual(true, container.Contains(itemToSet));
         Assert.NotNull(get);
         Assert.IsNull(get2);
-        Assert.IsTrue(false);
     }
     
     [Test]
