@@ -7,11 +7,13 @@ pool:
   name: Default
 
 steps:
-  # Builds the server
+  
+  # Builds the server to test
 - task: CmdLine@2
-  displayName: 'Build server'
+  displayName: 'Build and test server'
   inputs:
-    script: 'make build'
+    script: 
+    - 'make build'
 
 - task: CmdLine@2
   displayName: 'Run all unit tests'
