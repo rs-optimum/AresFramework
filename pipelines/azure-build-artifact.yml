@@ -1,0 +1,37 @@
+name: $(Build.SourceBranch).$(Build.BuildId)
+
+trigger:
+- release
+- dev
+- staging
+
+pool:
+  name: Default
+
+steps:
+  # Builds the server
+- task: CmdLine@2
+  displayName: 'Build server'
+  inputs:
+    script: 'make build'
+
+- task: CmdLine@2
+  displayName: 'Run all unit tests'
+  inputs:
+    script: 'make test'
+
+- task: CmdLine@2
+  displayName: 'Build docker image'
+  inputs:
+    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+
+- task: CmdLine@2
+  displayName: 'Build docker image'
+  inputs:
+    script: 'make docker-build BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
+
+
+- task: CmdLine@2
+  displayName: 'Publish docker image'
+  inputs:
+    script: 'make docker-publish BUILD_VERSION=$(Build.SourceBranch)-v$(Build.BuildId)'
