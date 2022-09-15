@@ -2,6 +2,7 @@ name: $(ENVIRONMENT).$(Build.BuildId)
 
 # We want manual intervention here
 trigger: none
+pr: none
 
 pool:
   name: Default
