@@ -1,9 +1,9 @@
-name: $(ENVIRONMENT)_$(Build.BuildId)
+name: $(Build.SourceBranch)_$(Build.BuildId)
 
 trigger:
-- release
-- dev
-- staging
+  - release
+  - dev
+  - staging
 
 pool:
   name: Default
@@ -15,12 +15,12 @@ variables:
 
 steps:
 
-- task: CmdLine@2
-  displayName: 'Build server'
-  inputs:
-    script: 'make build'
+  - task: CmdLine@2
+    displayName: 'Build server'
+    inputs:
+      script: 'make build'
 
-- task: CmdLine@2
-  displayName: 'Run all unit tests'
-  inputs:
-    script: 'make test'
+  - task: CmdLine@2
+    displayName: 'Run all unit tests'
+    inputs:
+      script: 'make test'
