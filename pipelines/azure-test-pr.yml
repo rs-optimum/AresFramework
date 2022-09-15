@@ -1,5 +1,3 @@
-name: $(Build.SourceBranchName)_$(Build.BuildId)
-
 trigger:
   - release
   - dev
