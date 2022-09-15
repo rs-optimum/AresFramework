@@ -11,7 +11,7 @@ steps:
   
   # Builds the server to test
 - task: CmdLine@2
-  displayName: 'Build and test server'
+  displayName: 'Build server'
   inputs:
     script: 'make build'
 
