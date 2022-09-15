@@ -9,7 +9,7 @@ trigger:
 - staging
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'vps-a1373eef'
 
 variables:
   solution: '**/*.sln'
