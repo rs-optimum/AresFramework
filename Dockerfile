@@ -13,7 +13,12 @@ FROM mcr.microsoft.com/dotnet/runtime:6.0
 WORKDIR /app
 COPY --from=publish /app/release .
 
+ARG SERVER_BUILD
+ENV SERVER_BUILD=$SERVER_BUILD
+
 RUN mkdir -p ~/.ares/Plugins
 RUN mkdir -p ~/.ares/Cache
+
+RUN echo $SERVER_BUILD
 
 ENTRYPOINT ["dotnet", "AresFramework.GameEngine.dll"]
