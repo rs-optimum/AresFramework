@@ -1,0 +1,28 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- release
+- dev
+- staging
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Debug'
+
+steps:
+
+- task: CmdLine@2
+  displayName: 'Install Make'
+  inputs:
+    script: 'apt-get install build-essential'
+  
+- task: Docker@2
+  displayName: 'Test the solution'
+- script: 'make docker-test'
