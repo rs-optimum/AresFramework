@@ -12,8 +12,7 @@ steps:
 - task: CmdLine@2
   displayName: 'Build and test server'
   inputs:
-    script: 
-    - 'make build'
+    script: 'make build'
 
 - task: CmdLine@2
   displayName: 'Run all unit tests'
