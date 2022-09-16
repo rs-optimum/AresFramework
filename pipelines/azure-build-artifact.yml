@@ -4,6 +4,13 @@ name: $(ENVIRONMENT).$(Build.BuildId)
 trigger: none
 pr: none
 
+schedules:
+- cron: '0 0 * * SUN'
+  displayName: 'Weekly Dev Build'
+  branches: 
+    include:
+    - dev
+
 pool:
   name: Default
 
