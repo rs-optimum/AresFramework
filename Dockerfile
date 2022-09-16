@@ -18,6 +18,8 @@ ENV SERVER_BUILD=$SERVER_BUILD
 
 RUN mkdir -p ~/.ares/Plugins
 RUN mkdir -p ~/.ares/Cache
+RUN mkdir -p ~/.ares/Data
+RUN mkdir -p ~/.ares/Logs
 
 RUN echo $SERVER_BUILD
 

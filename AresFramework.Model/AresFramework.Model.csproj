@@ -23,8 +23,9 @@
     <ItemGroup>
       <ProjectReference Include="..\AresFramework.Cache.Model\AresFramework.Cache.Model.csproj" />
       <ProjectReference Include="..\AresFramework.Cache\AresFramework.Cache.csproj" />
-      <ProjectReference Include="..\AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj" />
-      <ProjectReference Include="..\AresFramework.ServiceDependencies\AresFramework.ServiceDependencies.csproj" />
+      <ProjectReference Include="..\AresFramework.GameEngine.Task\AresFramework.GameEngine.Task.csproj" />
+      <ProjectReference Include="..\AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj" />
+      <ProjectReference Include="..\AresFramework.ServiceDependency\AresFramework.ServiceDependency.csproj" />
     </ItemGroup>
 
 </Project>

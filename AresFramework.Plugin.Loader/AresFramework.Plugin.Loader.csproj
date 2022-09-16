@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>AresFramework.Plugin.Loaders</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj" />
+      <ProjectReference Include="..\AresFramework.Plugin.Module\AresFramework.Plugin.Module.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="5.0.4" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
+      <PackageReference Include="YamlDotNet" Version="12.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>..\..\..\..\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>

@@ -7,6 +7,7 @@
         <OutputType>Exe</OutputType>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <Deterministic>False</Deterministic>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -14,25 +15,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj" />
-      <ProjectReference Include="..\AresFramework.Plugin.Loaders\AresFramework.Plugin.Loaders.csproj" />
+      <ProjectReference Include="..\AresFramework.GameEngine.Task\AresFramework.GameEngine.Task.csproj" />
+      <ProjectReference Include="..\AresFramework.Plugin.Loader\AresFramework.Plugin.Loader.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Module\AresFramework.Plugin.Module.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="ConfigurationSubstitutor" Version="1.5.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
       <PackageReference Include="NLog" Version="5.0.4" />
       <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
-        <None Update="nlog.config">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+      <PackageReference Include="YamlDotNet" Version="12.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Settings\world-settings.json">
+      <Content Include="Settings\*.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
