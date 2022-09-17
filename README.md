@@ -8,15 +8,36 @@ Download .net 6 sdk and runtime if necessary
 Open the project using Rider or Visual Studio and the project should automatically start.
 
 Create a folder inside of your user home directy called `.ares/`
-Within there create 2 folders called `Plugins` and `Cache`.
+Within there create other folders called `Plugins`, `Cache`, `Logs` and `Data`.
+
+The `Data` folder should contain all of the database information for the login server and other 
 
 And within `Plugins` contains folders relevant to the plugins
 
 Please find a cache from: https://archive.openrs2.org/
 
-## Plugin Development
+### Web API
+The `AresFramework.WebApi` project will interface with different parts of the system and combine many operations - such as logging in. 
+This will also have the ability to retrieve player's information such as stats, inventories etc. However, most services will be able to call themselves. This will be especially useful for operations on a website
 
-Hopefully this will explain a few things
+## Plugins
+This Section is dedicated to Plugins
+
+### Ignores
+Create a file `ignores.yml` in the folder of a plugin in the `Plugins` folder. This file is specifically created to prevent the targeted plugin from 
+doing specific operations such as mapping certain npc ids to options.
+
+An example:
+`.ares/Plugins/ExamplePlugin/ignores.yml`
+```yaml
+npcInteractionIgnores:
+  - option: talk-to
+    npcId: 1
+  - option: pickpocket
+    npcId: 2
+```
+
+Checkout the following `AresFramework.Plugin.Ignore/PluginIgnore.cs` for all the possibilities to prevent specific plugin actions.
 
 ### Adding a plugin production
 When you build and release your plugin, you should create a folder with the plugin name; `AresFramework.Plugins.[NAME]` 
