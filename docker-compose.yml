@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   game:
-    image: 'test'
+    image: 'rsoptimum/aresframework-gameengine:dev-v45'
     stdin_open: true
     tty: true
     ports: 

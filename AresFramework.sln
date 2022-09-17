@@ -10,17 +10,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Module
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Model", "AresFramework.Model\AresFramework.Model.csproj", "{3BB6826A-ECA0-4FEA-B8BE-7B5313ED8EA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Loaders", "AresFramework.Plugin.Loaders\AresFramework.Plugin.Loaders.csproj", "{1952684B-CD42-4A80-A32F-1BD8A15794C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Loader", "AresFramework.Plugin.Loader\AresFramework.Plugin.Loader.csproj", "{1952684B-CD42-4A80-A32F-1BD8A15794C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Model.Tests", "AresFramework.Model.Tests\AresFramework.Model.Tests.csproj", "{F32ED946-4FF8-4642-A603-32D347B331C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Model.Test", "AresFramework.Model.Test\AresFramework.Model.Test.csproj", "{F32ED946-4FF8-4642-A603-32D347B331C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.GameEngine.Tasks", "AresFramework.GameEngine.Tasks\AresFramework.GameEngine.Tasks.csproj", "{51B671A1-11F2-41CA-A877-7E495584CC63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.GameEngine.Task", "AresFramework.GameEngine.Task\AresFramework.GameEngine.Task.csproj", "{51B671A1-11F2-41CA-A877-7E495584CC63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Utilities", "AresFramework.Utilities\AresFramework.Utilities.csproj", "{A61C5D68-451D-473D-A900-7CD1BB3F9D57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Utility", "AresFramework.Utility\AresFramework.Utility.csproj", "{A61C5D68-451D-473D-A900-7CD1BB3F9D57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.ServiceDependencies", "AresFramework.ServiceDependencies\AresFramework.ServiceDependencies.csproj", "{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.ServiceDependency", "AresFramework.ServiceDependency\AresFramework.ServiceDependency.csproj", "{A053FB15-A9A7-4153-A6FB-CB0BC2E8D2E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Cache.Model", "AresFramework.Cache.Model\AresFramework.Cache.Model.csproj", "{1653CEDF-4450-441F-B487-4C6AB3814ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.WebApi", "AresFramework.WebApi\AresFramework.WebApi.csproj", "{7984A987-156A-418D-AF14-EDFE739672FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence", "AresFramework.Persistence\AresFramework.Persistence.csproj", "{FA77938A-6E85-466E-AD96-E092550794A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence.Test", "AresFramework.Persistence.Test\AresFramework.Persistence.Test.csproj", "{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence.Model", "AresFramework.Persistence.Model\AresFramework.Persistence.Model.csproj", "{09D1447C-6B9A-485F-925A-2C1DE157F55D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Ignore", "AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj", "{1116772E-4682-408E-9E9B-9F3A1FE503AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,5 +82,29 @@ Global
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7984A987-156A-418D-AF14-EDFE739672FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7984A987-156A-418D-AF14-EDFE739672FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7984A987-156A-418D-AF14-EDFE739672FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7984A987-156A-418D-AF14-EDFE739672FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA77938A-6E85-466E-AD96-E092550794A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA77938A-6E85-466E-AD96-E092550794A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA77938A-6E85-466E-AD96-E092550794A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA77938A-6E85-466E-AD96-E092550794A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D1447C-6B9A-485F-925A-2C1DE157F55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D1447C-6B9A-485F-925A-2C1DE157F55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D1447C-6B9A-485F-925A-2C1DE157F55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D1447C-6B9A-485F-925A-2C1DE157F55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1116772E-4682-408E-9E9B-9F3A1FE503AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1116772E-4682-408E-9E9B-9F3A1FE503AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1116772E-4682-408E-9E9B-9F3A1FE503AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1116772E-4682-408E-9E9B-9F3A1FE503AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{487C0602-89CB-4560-BE16-D927C5126A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487C0602-89CB-4560-BE16-D927C5126A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487C0602-89CB-4560-BE16-D927C5126A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487C0602-89CB-4560-BE16-D927C5126A9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
