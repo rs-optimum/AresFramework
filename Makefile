@@ -14,7 +14,7 @@ test:
 
 .PHONY: docker-build
 docker-build:
-	sudo docker build --build-arg SERVER_BUILD=$(BUILD_VERSION) GAME_ENV=$(GAME_ENV) . -t rsoptimum/aresframework-gameengine:$(BUILD_VERSION)
+	sudo docker build --build-arg SERVER_BUILD=$(BUILD_VERSION) --build-arg GAME_ENV=$(GAME_ENV) . -t rsoptimum/aresframework-gameengine:$(BUILD_VERSION)
 	
 # This will run the tests we need
 .PHONY: docker-test
