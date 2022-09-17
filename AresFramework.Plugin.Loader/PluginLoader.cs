@@ -4,7 +4,6 @@ using System.Text;
 using AresFramework.Plugin.Ignore;
 using AresFramework.Plugin.Module;
 using AresFramework.Utilities;
-using Newtonsoft.Json;
 using NLog;
 using NLog.Fluent;
 using YamlDotNet.Serialization.NamingConventions;
