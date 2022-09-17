@@ -1,7 +1,17 @@
 # AresFramework
 [![Build Status](https://dev.azure.com/AresFramework/AresFramework/_apis/build/status/rs-optimum.AresFramework?branchName=release)](https://dev.azure.com/AresFramework/AresFramework/_build/latest?definitionId=1&branchName=release)
 
-Welcome to a plugin first approach for an RSPS using decent OO design principles.
+An OSRS build game server in C#.
+
+## Prerequisite
+[Download .NET (Linux, macOS, and Windows)](https://dotnet.microsoft.com/en-us/download)
+
+### Optional
+
+Make (used for the pipelines and to easily generate server functionality): 
+[Windows](https://stackoverflow.com/questions/2532234/how-to-run-a-makefile-in-windows), 
+[Linux](https://linuxhint.com/install-make-ubuntu/),
+[Mac](https://stackoverflow.com/a/10265766)
 
 ## How to run
 Download .net 6 sdk and runtime if necessary
@@ -15,6 +25,16 @@ The `Data` folder should contain all of the database information for the login s
 And within `Plugins` contains folders relevant to the plugins
 
 Please find a cache from: https://archive.openrs2.org/
+
+## Configuration and data
+The following folder location will contain all information the server needs:
+`$USER.HOME/.ares`, as described above the following folders should be created:
+`Plugins`, `Cache`, `Logs` and `Data`.
+
+### Configuration
+Create a file called `settings.json` in this file directory and follow the same structure seen: https://github.com/rs-optimum/AresFramework/blob/release/AresFramework.GameEngine/Settings/settings.json
+overriding any values deemed necessary such as NLog. These will be initialized and be read as the source of truth if they exist. However - if adding a new variable always add it to the different environments first.
+
 
 ### Web API
 The `AresFramework.WebApi` project will interface with different parts of the system and combine many operations - such as logging in. 

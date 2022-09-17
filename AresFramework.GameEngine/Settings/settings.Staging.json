@@ -43,12 +43,12 @@
         "rules":[
             {
                 "logger":"*",
-                "minLevel":"Info",
+                "minLevel":"Debug",
                 "writeTo":"Console"
             },
             {
                 "logger":"*",
-                "minLevel":"Info",
+                "minLevel":"Debug",
                 "writeTo":"GameServer"
             }
         ]
