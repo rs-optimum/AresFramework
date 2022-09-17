@@ -4,6 +4,13 @@ name: $(ENVIRONMENT).$(Build.BuildId)
 trigger: none
 pr: none
 
+schedules:
+- cron: '0 0 * * SUN'
+  displayName: 'Weekly Dev Build'
+  branches: 
+    include:
+    - dev
+
 pool:
   name: Default
 
@@ -12,25 +19,30 @@ steps:
   # Builds the server to test
 - task: CmdLine@2
   displayName: 'Build server'
+  timeoutInMinutes: 2
   inputs:
     script: 'make build'
 
 - task: CmdLine@2
   displayName: 'Run all unit tests'
+  timeoutInMinutes: 2
   inputs:
     script: 'make test'
 
 - task: CmdLine@2
   displayName: 'Build docker image'
+  timeoutInMinutes: 2
   inputs:
     script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
     
 - task: CmdLine@2
   displayName: 'Publish docker image'
+  timeoutInMinutes: 2
   inputs:
     script: 'make docker-publish BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId) DOCKER_TOKEN=$(DOCKER_TOKEN)'
     
 - task: CmdLine@2
   displayName: 'Delete docker image'
+  timeoutInMinutes: 2
   inputs:
     script: 'docker image rm rsoptimum/aresframework-gameengine:$(ENVIRONMENT)-v$(Build.BuildId)'

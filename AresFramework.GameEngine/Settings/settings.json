@@ -1,7 +1,6 @@
 {
     "WorldName": "Ares Framework",
     "GamePort": 43594,
-    "DataLocation": "",
     "NLog":{
         "internalLogLevel":"Info",
         "internalLogFile":"/home/optimum/.ares/Logs",
@@ -51,7 +50,7 @@
             },
             {
                 "logger":"*",
-                "minLevel":"Info",
+                "minLevel":"Debug",
                 "writeTo":"GameServer"
             }
         ]
