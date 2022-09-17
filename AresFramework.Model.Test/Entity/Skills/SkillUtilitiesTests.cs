@@ -14,7 +14,6 @@ public class SkillUtilitiesTests
         Assert.AreEqual(13034431, SkillUtilities.GetExperienceForLevel(99));
         Assert.AreEqual(6517253, SkillUtilities.GetExperienceForLevel(92));
         Assert.AreEqual(101333, SkillUtilities.GetExperienceForLevel(50));
-        Assert.IsTrue(false);
     }
     
     [Test]
