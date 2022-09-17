@@ -32,8 +32,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Ignore", "AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj", "{1116772E-4682-408E-9E9B-9F3A1FE503AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugins.Thieving", "..\AresFramework.Plugins.Thieving\AresFramework.Plugins.Thieving.csproj", "{487C0602-89CB-4560-BE16-D927C5126A9F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
