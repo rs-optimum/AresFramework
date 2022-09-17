@@ -15,12 +15,12 @@ steps:
 
   - task: CmdLine@2
     displayName: 'Build server'
-    retryCountOnTaskFailure: 3
-    timeoutInMinutes: 3
+    timeoutInMinutes: 1
     inputs:
       script: 'make build'
 
   - task: CmdLine@2
     displayName: 'Run all unit tests'
+    timeoutInMinutes: 1
     inputs:
       script: 'make test'

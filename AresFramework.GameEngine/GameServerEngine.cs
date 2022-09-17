@@ -73,7 +73,9 @@ public static class GameServerEngine
         });
         
         Log.Info($"Loaded {pluginLoaders} {nameof(IPluginLoader)} loaders");
-        Log.Info($"Game initialized and loaded on the port {config["GamePort"]}, Version: " + Environment.GetEnvironmentVariable("SERVER_BUILD"));
+        Log.Info($"Game initialized on the port {config["GamePort"]}, " +
+                 $"Version: {Environment.GetEnvironmentVariable("SERVER_BUILD")}, " +
+                 $"Environment: {Environment.GetEnvironmentVariable("GAME_ENV")}");
 
         var finishedTick = DateTime.Now.Ticks;
         TimeSpan elapsedSpan = new TimeSpan(finishedTick - startTick);
