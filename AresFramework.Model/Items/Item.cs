@@ -11,8 +11,8 @@ namespace AresFramework.Model.Items;
 /// <param name="Amount">The game item amount</param>
 public record Item(int Id, int Amount = 1)
 { 
-    public int Id { get; } = Id;
-    public int Amount { get; } = Amount;
+    public int Id { get; set; } = Id;
+    public int Amount { get; set; } = Amount;
 
     public ItemDefinition? Definition()
     {
@@ -32,6 +32,11 @@ public record Item(int Id, int Amount = 1)
     public Item IncrementAmount(int amount)
     {
         return new Item(this.Id, amount + amount);
+    }
+
+    public Item() : this(0,0)
+    {
+        
     }
     
 }

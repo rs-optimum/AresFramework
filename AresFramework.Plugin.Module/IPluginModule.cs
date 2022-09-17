@@ -5,6 +5,7 @@ namespace AresFramework.Plugin.Module;
 /// </summary>
 public interface IPluginModule
 {
+    
     /// <summary>
     /// Initializes the plugin
     /// </summary>

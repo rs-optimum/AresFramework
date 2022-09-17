@@ -13,8 +13,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AresFramework.Cache.Model\AresFramework.Cache.Model.csproj" />
-      <ProjectReference Include="..\AresFramework.ServiceDependencies\AresFramework.ServiceDependencies.csproj" />
-      <ProjectReference Include="..\AresFramework.Utilities\AresFramework.Utilities.csproj" />
+      <ProjectReference Include="..\AresFramework.ServiceDependency\AresFramework.ServiceDependency.csproj" />
+      <ProjectReference Include="..\AresFramework.Utility\AresFramework.Utility.csproj" />
     </ItemGroup>
 
 </Project>

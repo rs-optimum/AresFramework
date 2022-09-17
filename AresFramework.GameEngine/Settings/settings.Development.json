@@ -1,0 +1,11 @@
+{
+    "WorldName": "Ares Framework - Localhost",
+    "GamePort": 43594,
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    }
+}
