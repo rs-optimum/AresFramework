@@ -33,7 +33,7 @@ steps:
   displayName: 'Build docker image'
   timeoutInMinutes: 2
   inputs:
-    script: 'make docker-build BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
+    script: 'make docker-build GAME_ENV=$(ENVIRONMENT) BUILD_VERSION=$(ENVIRONMENT)-v$(Build.BuildId)'
     
 - task: CmdLine@2
   displayName: 'Publish docker image'

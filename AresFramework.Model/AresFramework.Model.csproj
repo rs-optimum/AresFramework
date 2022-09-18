@@ -16,16 +16,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="NLog" Version="5.0.4" />
-      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\AresFramework.Cache.Model\AresFramework.Cache.Model.csproj" />
       <ProjectReference Include="..\AresFramework.Cache\AresFramework.Cache.csproj" />
       <ProjectReference Include="..\AresFramework.GameEngine.Task\AresFramework.GameEngine.Task.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj" />
       <ProjectReference Include="..\AresFramework.ServiceDependency\AresFramework.ServiceDependency.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="5.0.4" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
     </ItemGroup>
 
 </Project>

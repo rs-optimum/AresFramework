@@ -22,8 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.ServiceDepend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Cache.Model", "AresFramework.Cache.Model\AresFramework.Cache.Model.csproj", "{1653CEDF-4450-441F-B487-4C6AB3814ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.WebApi", "AresFramework.WebApi\AresFramework.WebApi.csproj", "{7984A987-156A-418D-AF14-EDFE739672FF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence", "AresFramework.Persistence\AresFramework.Persistence.csproj", "{FA77938A-6E85-466E-AD96-E092550794A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence.Test", "AresFramework.Persistence.Test\AresFramework.Persistence.Test.csproj", "{3B3B890C-5DB8-4751-B8AB-B4250C0ACA2B}"
@@ -82,10 +80,6 @@ Global
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1653CEDF-4450-441F-B487-4C6AB3814ACC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7984A987-156A-418D-AF14-EDFE739672FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7984A987-156A-418D-AF14-EDFE739672FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7984A987-156A-418D-AF14-EDFE739672FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7984A987-156A-418D-AF14-EDFE739672FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA77938A-6E85-466E-AD96-E092550794A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA77938A-6E85-466E-AD96-E092550794A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA77938A-6E85-466E-AD96-E092550794A0}.Release|Any CPU.ActiveCfg = Release|Any CPU

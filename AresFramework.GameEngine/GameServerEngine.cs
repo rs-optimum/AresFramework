@@ -1,20 +1,7 @@
-using System.Runtime.CompilerServices;
-using AresFramework.Cache;
-using AresFramework.Cache.Archives;
-using AresFramework.GameEngine.Schedular;
-using AresFramework.GameEngine.Tasks;
-using AresFramework.GameEngine.Tasks.Actions;
-using AresFramework.Model.Entity;
-using AresFramework.Model.Entity.Action;
-using AresFramework.Model.Entity.Skills;
-using AresFramework.Model.Items;
-using AresFramework.Model.World;
 using AresFramework.Plugin.Loaders;
-using AresFramework.Plugin.Module;
 using AresFramework.ServiceDependencies;
 using AresFramework.Utilities;
 using AresFramework.Utilities.Extensions;
-using ConfigurationSubstitution;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +16,6 @@ public static class GameServerEngine
 
     public static void Main(string[] args)
     {
-        
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory()) 
             .AddJsonFile("Settings/settings.json")
