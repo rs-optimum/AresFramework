@@ -36,7 +36,7 @@ public class PluginLoader : AssemblyLoadContext
 
         return null;
     }
-
+    
     protected override IntPtr LoadUnmanagedDll(string unmanagedDllName)
     {
         string? libraryPath = _resolver.ResolveUnmanagedDllToPath(unmanagedDllName);
@@ -133,28 +133,34 @@ public class PluginLoader : AssemblyLoadContext
         // Loads and initializes all plugin modules and runs the init function
         InitializeTypes<IPluginModule>(typeof(IPluginModule), (type, name, assembly) =>
         {
-            var attribute = name.GetCustomAttributes(typeof(PluginModuleAttribute), true)
-                .FirstOrDefault() as PluginModuleAttribute;
-
-            if (attribute == null)
+            try
             {
-                Log.Error($"Plugins must have a class that inherit both {nameof(PluginModuleAttribute)} and {nameof(IPluginModule)}: " + name.FullName);
-                return;
-            }
-            Log.Debug($"Initiating Plugin: {attribute.Name}, Description: {attribute.Description}, Version: {attribute.Version}, Author: {attribute.Author}");
-            initializedModuleTaskList.Add(Task.Run(type.Initialize)
-                .ContinueWith((t) =>
+                var attribute = name.GetCustomAttributes(typeof(PluginModuleAttribute), true)
+                    .FirstOrDefault() as PluginModuleAttribute;
+
+                if (attribute == null)
                 {
-                    if (t.IsCompleted)
+                    Log.Error($"Plugins must have a class that inherit both {nameof(PluginModuleAttribute)} and {nameof(IPluginModule)}: " + name.FullName);
+                    return;
+                }
+                Log.Debug($"Initiating Plugin: {attribute.Name}, Description: {attribute.Description}, Version: {attribute.Version}, Author: {attribute.Author}");
+                initializedModuleTaskList.Add(Task.Run(type.Initialize)
+                    .ContinueWith((t) =>
                     {
-                        Log.Info($"Plugin Initialized: {attribute.Name}, Description: {attribute.Description}, Version: {attribute.Version}, Author: {attribute.Author}");
-                    }
-                    if (t.IsFaulted)
-                    {
-                        Log.Error(t.Exception, $"Error initializing plugin {name.FullName}");
-                    }
-                }));
-            
+                        if (t.IsCompleted)
+                        {
+                            Log.Info($"Plugin Initialized: {attribute.Name}, Description: {attribute.Description}, Version: {attribute.Version}, Author: {attribute.Author}");
+                        }
+                        if (t.IsFaulted)
+                        {
+                            Log.Error(t.Exception, $"Error initializing plugin {name.FullName}");
+                        }
+                    }));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error loading assembly: " + name.Name);
+            }
         });
         
         Task.WaitAll(initializedModuleTaskList.ToArray());

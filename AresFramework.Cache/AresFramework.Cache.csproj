@@ -7,14 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NLog" Version="5.0.4" />
-      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\AresFramework.Cache.Model\AresFramework.Cache.Model.csproj" />
       <ProjectReference Include="..\AresFramework.ServiceDependency\AresFramework.ServiceDependency.csproj" />
       <ProjectReference Include="..\AresFramework.Utility\AresFramework.Utility.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="5.0.4" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.4" />
     </ItemGroup>
 
 </Project>
