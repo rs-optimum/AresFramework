@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 
-namespace AresFramework.Utilities;
+namespace AresFramework.Utility;
 
 public static class Constants
 {

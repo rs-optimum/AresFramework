@@ -1,4 +1,7 @@
 {
+    "ServerSettings": {
+        "EnableGameDebug": false
+    },
     "NLog":{
         "internalLogLevel":"Info",
         "internalLogFile":"/home/ubuntu/.ares/Logs",

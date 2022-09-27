@@ -3,7 +3,7 @@ using System.Runtime.Loader;
 using System.Text;
 using AresFramework.Plugin.Ignore;
 using AresFramework.Plugin.Module;
-using AresFramework.Utilities;
+using AresFramework.Utility;
 using NLog;
 using NLog.Fluent;
 using YamlDotNet.Serialization.NamingConventions;
@@ -72,6 +72,7 @@ public class PluginLoader : AssemblyLoadContext
         foreach (var directory in directories)
         {
             var files = Directory.GetFiles(directory, "*.dll");
+            Log.Debug("A list of external plugins: " + string.Join(", ", files));
             LoadAssemblies(files, directory);
         }
 
@@ -87,7 +88,7 @@ public class PluginLoader : AssemblyLoadContext
             var plugin = LoadPlugin(file);
             if (plugin != null)
             {
-                if (directory != null && plugin.GetName().FullName.StartsWith("AresFramework.Plugins."))
+                if (directory != null && plugin.GetName().FullName.Contains("AresFramework.Plugins."))
                 {
                     var ignores = ParseIgnores(directory);
                     if (ignores != null)

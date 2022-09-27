@@ -1,7 +1,6 @@
 using AresFramework.Cache.Archives;
 using AresFramework.Cache.Exceptions;
 using AresFramework.Cache.Files;
-using AresFramework.Utilities;
 using NLog;
 
 namespace AresFramework.Cache;
@@ -60,13 +59,13 @@ public class GameCache : IDisposable
             {
                 amountOfIndexes++;
                 Indencies[i] = File.Open(path, FileMode.Open, CacheAccess);
-                Log.Debug("Loaded index " + i);
             }
         }
         if (amountOfIndexes <= 0)
         {
             throw new InvalidCacheException("Cache location container 0 indexes");
         }
+        
         var mainCacheFile = Path.Combine(CachePath, "main_file_cache.dat2");
         if (File.Exists(mainCacheFile))
         {
@@ -80,14 +79,15 @@ public class GameCache : IDisposable
     }
 
 
-    public MemoryStream GetFile(FileDescriptor descriptor)
+    public BinaryReader GetFile(FileDescriptor descriptor)
     {
         CacheIndex index = GetIndex(descriptor);
-        MemoryStream stream = new MemoryStream(index.Size);
+        BinaryReader stream = new BinaryReader(new MemoryStream(index.Size));
 
         long position = index.Block * CacheConstants.BlockSize;
         int read = 0;
         int size = index.Size;
+        
         return stream;
     }
 
@@ -104,7 +104,7 @@ public class GameCache : IDisposable
             if (position >= 0 && indexStream.Length >= position + CacheConstants.IndexSize)
             {
                 indexStream.Seek(position, SeekOrigin.Begin);
-                indexStream.Read(buffer, 0,  buffer.Length);
+                var read = indexStream.Read(buffer, 0,  buffer.Length);
             }
         }
         

@@ -1,25 +1,22 @@
 using System.Text;
 
-namespace AresFramework.Utilities;
+namespace AresFramework.Utility;
 
 public static class BufferUtils
 {
     
-    public static int ReadSmart(MemoryStream stream)
+    public static int ReadSmart(this BinaryReader stream)
     {
-        using var br = new BinaryReader(stream, Encoding.Default, true);
-        var previousPosition = stream.Position;
+        var previousPosition = stream.BaseStream.Position;
         var peek = stream.ReadByte() & 0xFF;
-        stream.Position = previousPosition;
-        var value = peek > byte.MaxValue ? (br.ReadInt16() & 0xFFFF) + short.MinValue : br.ReadByte() & 0xFF;
+        stream.BaseStream.Position = previousPosition;
+        var value = peek > byte.MaxValue ? (stream.ReadInt16() & 0xFFFF) + short.MinValue : stream.ReadByte() & 0xFF;
         return value;
     }
     
-    
-    public static int ReadUnsignedMedium(MemoryStream stream)
+    public static int ReadUnsignedMedium(this BinaryReader stream)
     {
-        using var br = new BinaryReader(stream, Encoding.Default, true);
-        return (br.ReadInt16() & 0xFFFF) << 8 | br.ReadByte() & 0xFF;
+        return (stream.ReadInt16() & 0xFFFF) << 8 | stream.ReadByte() & 0xFF;
     }
     
 }

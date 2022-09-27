@@ -1,7 +1,7 @@
-using AresFramework.ServiceDependencies.Definitions;
+using AresFramework.ServiceDependency.Definitions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AresFramework.ServiceDependencies;
+namespace AresFramework.ServiceDependency;
 
 public static class AresServiceCollection
 {
@@ -9,9 +9,8 @@ public static class AresServiceCollection
     
     public static IServiceProvider ServiceProvider { get; set; }
 
-    public static IItemDefinitions? ItemDefinitions()
-    {
-        return ServiceProvider.GetService(typeof(IItemDefinitions)) as IItemDefinitions;
-    }
-    
+    public static IItemDefinitions? ItemDefinitions => ServiceProvider.GetService(typeof(IItemDefinitions)) as IItemDefinitions;
+    public static INpcDefinitions? NpcDefinitions => ServiceProvider.GetService(typeof(INpcDefinitions)) as INpcDefinitions;
+    public static ServerSettings? ServerSettings => ServiceProvider.GetService(typeof(ServerSettings)) as ServerSettings;
+
 }

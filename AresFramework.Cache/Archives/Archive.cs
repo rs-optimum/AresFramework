@@ -1,4 +1,4 @@
-using AresFramework.Utilities;
+using AresFramework.Utility;
 
 namespace AresFramework.Cache.Archives;
 
@@ -9,7 +9,6 @@ public class Archive
     public Archive(ArchiveEntry[] archiveEntries)
     {
         ArchiveEntries = archiveEntries;
-        
     }
 
     public ArchiveEntry GetEntry(string name)
@@ -27,10 +26,10 @@ public class Archive
         throw new Exception("Could not find entry " + name);
     }
     
-    public static Archive Decode(MemoryStream buffer)
+    public static Archive Decode(BinaryReader buffer)
     {
-        int extractSize = BufferUtils.ReadUnsignedMedium(buffer);
-        int size = BufferUtils.ReadUnsignedMedium(buffer);
+        int extractSize = buffer.ReadUnsignedMedium();
+        int size = buffer.ReadUnsignedMedium();
         
         return null;
     }

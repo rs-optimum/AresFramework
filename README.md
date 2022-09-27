@@ -26,22 +26,28 @@ And within `Plugins` contains folders relevant to the plugins
 
 Please find a cache from: https://archive.openrs2.org/
 
+### Using Docker
+The following docker repository: [Docker Hub - aresframework-gameengine](https://hub.docker.com/repository/docker/rsoptimum/aresframework-gameengine)
+by any of the branches you wish, recommended for releases using `Release-V*` as these will be the most up to date.
+
+The following `.env` file and properties:
+```properties
+GAME_PORT=5000
+CACHE_LOCATION=/home/optimum/.ares/Cache/
+PLUGINS_LOCATION=/home/optimum/.ares/Plugins/
+```
+
 ## Configuration and data
 The following folder location will contain all information the server needs:
 `$USER.HOME/.ares`, as described above the following folders should be created:
 `Plugins`, `Cache`, `Logs` and `Data`.
 
 ### Configuration
-Create a file called `settings.json` in this file directory and follow the same structure seen: https://github.com/rs-optimum/AresFramework/blob/release/AresFramework.GameEngine/Settings/settings.json
+Create a file called `settings.json` in `$USER.HOME/.ares` directory and follow the same structure seen: https://github.com/rs-optimum/AresFramework/blob/release/AresFramework.GameEngine/Settings/settings.json
 overriding any values deemed necessary such as NLog. These will be initialized and be read as the source of truth if they exist. However - if adding a new variable always add it to the different environments first.
 
-
-### Web API
-The `AresFramework.WebApi` project will interface with different parts of the system and combine many operations - such as logging in. 
-This will also have the ability to retrieve player's information such as stats, inventories etc. However, most services will be able to call themselves. This will be especially useful for operations on a website
-
 ## Plugins
-This Section is dedicated to Plugins
+This Section is dedicated to Plugins - Plugins are extensions to the main game and most things should be done via extensions.
 
 ### Ignores
 Create a file `ignores.yml` in the folder of a plugin in the `Plugins` folder. This file is specifically created to prevent the targeted plugin from 

@@ -1,11 +1,11 @@
 version: '3.5'
 services:
   game:
-    image: 'test:1'
+    image: 'rsoptimum/aresframework-gameengine:Release-v85'
     stdin_open: true
     tty: true
     ports: 
       - "${GAME_PORT}:43594"
     volumes:
-      - "${CACHE_LOCATION}:/app/.ares/Cache/"
-      - "${PLUGINS_LOCATION}:/app/.ares/Plugins/"
+      - "${CACHE_LOCATION}:/root/.ares/Cache/"
+      - "${PLUGINS_LOCATION}:/root/.ares/Plugins/"

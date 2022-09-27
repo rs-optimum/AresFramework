@@ -28,6 +28,12 @@ steps:
   timeoutInMinutes: 2
   inputs:
     script: 'make test'
+    
+- task: CmdLine@2
+  displayName: 'Publish Server'
+  timeoutInMinutes: 2
+  inputs:
+    script: 'dotnet publish -c Release -o release'
 
 - task: CmdLine@2
   displayName: 'Build docker image'

@@ -1,4 +1,4 @@
-namespace AresFramework.Utilities.Extensions;
+namespace AresFramework.Utility.Extensions;
 
 /// <summary>
 /// Contains a bunch of number extensions

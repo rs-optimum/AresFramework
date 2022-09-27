@@ -1,7 +1,12 @@
+using AresFramework.Cache;
+using AresFramework.Cache.Decoder;
+using AresFramework.Model.Entities.Players;
+using AresFramework.Model.Handlers;
+using AresFramework.Networking;
 using AresFramework.Plugin.Loaders;
-using AresFramework.ServiceDependencies;
-using AresFramework.Utilities;
-using AresFramework.Utilities.Extensions;
+using AresFramework.ServiceDependency;
+using AresFramework.Utility;
+using AresFramework.Utility.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +29,6 @@ public static class GameServerEngine
             .AddEnvironmentVariables()
             .Build();
         
-        
         LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection("NLog")); // Configure NLog
         Constants.Configuration = config;
 
@@ -34,7 +38,7 @@ public static class GameServerEngine
         var builder = Host.CreateDefaultBuilder(args);
         
         AresServiceCollection.ServiceCollection = new ServiceCollection();
-        AresServiceCollection.ServiceCollection.RegisterServices();
+        AresServiceCollection.ServiceCollection.RegisterServices(config);
 
         var serviceFactory = new DefaultServiceProviderFactory();
         serviceFactory.CreateBuilder(AresServiceCollection.ServiceCollection);
@@ -42,13 +46,17 @@ public static class GameServerEngine
         AresServiceCollection.ServiceProvider = serviceFactory.CreateServiceProvider(AresServiceCollection.ServiceCollection);
         builder.Build();
 
+        //GameCache cache = new GameCache($"{Constants.AresFolder}/Cache/", FileAccess.ReadWrite);
+        //cache.LoadCache();
+
+        //var decoder = new NpcDefinitionDecoder(cache);
+        //decoder.Decode();
+        
         Parallel.Invoke(() => PluginLoader.LoadInternalPlugins(), () => PluginLoader.LoadPluginsExternalPlugins());
         
         Log.Info("Loaded plugin assemblies");
         
         PluginLoader.InitializePlugins();
-        
-
         int pluginLoaders = 0;
         // Runs the IPluginLoader to load specific data / interactions
         PluginLoader.InitializeTypes<IPluginLoader>(typeof(IPluginLoader), (type, name, assembly) =>
@@ -66,6 +74,17 @@ public static class GameServerEngine
         var finishedTick = DateTime.Now.Ticks;
         TimeSpan elapsedSpan = new TimeSpan(finishedTick - startTick);
         Log.Info($"Game Engine took {elapsedSpan.TotalMilliseconds.FormatWithCommas()} ms to start");
+
+
+        Player player = new Player("Optimum", new(1, 1));
+        player.Inventory.Items[0] = 4716;
+        
+        
+        DropItemHandler.DropItem(player, 0);
+        
+        
+        // NetworkBootstrap b = new NetworkBootstrap();
+        //b.BindAsync(settings!.GamePort);
         
         Console.Read();
     }

@@ -1,4 +1,6 @@
-using AresFramework.Model.Items.Containers.Actions;
+using AresFramework.Model.Items.Containers.Listeners;
+using AresFramework.Model.Items.Containers.Transactions;
+using AresFramework.Model.Items.Containers.Transactions.Impl;
 
 namespace AresFramework.Model.Items.Containers;
 
@@ -8,10 +10,10 @@ namespace AresFramework.Model.Items.Containers;
 public class ItemContainer
 {
     public Item[] Items { get; set; }
-    protected int _capacity;
-    protected ItemStackPolicy _itemStackPolicy;
-    protected ItemMovePolicy _itemMovePolicy;
-    protected List<IContainerListener> _listeners;
+    private int _capacity;
+    private ItemStackPolicy _itemStackPolicy;
+    private ItemMovePolicy _itemMovePolicy;
+    private List<IContainerListener> _listeners = new();
     public ContainerTransaction Transaction;
     
     /// <summary>
@@ -25,8 +27,17 @@ public class ItemContainer
         _capacity = capacity;
         _itemStackPolicy = itemStackPolicy;
         _itemMovePolicy = policy;
-        _listeners = new List<IContainerListener>();
         Transaction = new LenientContainerTransaction(this);
+    }
+
+    public ItemContainer()
+    {
+        Transaction = new LenientContainerTransaction(this);
+    }
+
+    protected void SetCapacity(int capacity)
+    {
+        Items = new Item[capacity];
     }
 
     /// <summary>
@@ -300,7 +311,7 @@ public class ItemContainer
     
     
     /// <summary>
-    /// <inheritdoc cref="Set(int,AresFramework.Model.Entity.Item.Item)"/>
+    /// <inheritdoc cref="Set(int,Item)"/>
     /// </summary>
     /// <param name="slot">The slot to set</param>
     /// <param name="item">The item id to set</param>

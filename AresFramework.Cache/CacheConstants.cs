@@ -3,7 +3,7 @@ namespace AresFramework.Cache;
 public static class CacheConstants
 {
     
-    public const int ArchiveCount = 9;
+    public const int ArchiveCount = 16;
 
     public const int ChunkSize = 512;
 

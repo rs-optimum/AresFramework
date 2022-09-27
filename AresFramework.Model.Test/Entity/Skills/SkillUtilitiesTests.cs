@@ -1,6 +1,6 @@
 using System;
 using System.Reflection;
-using AresFramework.Model.Entity.Skills;
+using AresFramework.Model.Entities.Skills;
 using NUnit.Framework;
 
 namespace AresFramework.Model.Test.Entity.Skills;

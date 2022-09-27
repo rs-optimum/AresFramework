@@ -15,7 +15,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\AresFramework.Plugins.Barrows\AresFramework.Plugins.Barrows.csproj" />
       <ProjectReference Include="..\AresFramework.GameEngine.Task\AresFramework.GameEngine.Task.csproj" />
+      <ProjectReference Include="..\AresFramework.Networking\AresFramework.Networking.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Loader\AresFramework.Plugin.Loader.csproj" />
       <ProjectReference Include="..\AresFramework.Plugin.Module\AresFramework.Plugin.Module.csproj" />
     </ItemGroup>

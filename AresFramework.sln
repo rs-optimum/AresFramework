@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Persistence.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugin.Ignore", "AresFramework.Plugin.Ignore\AresFramework.Plugin.Ignore.csproj", "{1116772E-4682-408E-9E9B-9F3A1FE503AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AresFramework.Plugins.Barrows", "..\AresFramework.Plugins.Barrows\AresFramework.Plugins.Barrows.csproj", "{3D0D8F77-2CF2-4553-B50A-47D116F8D77F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,5 +102,9 @@ Global
 		{487C0602-89CB-4560-BE16-D927C5126A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{487C0602-89CB-4560-BE16-D927C5126A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{487C0602-89CB-4560-BE16-D927C5126A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0D8F77-2CF2-4553-B50A-47D116F8D77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0D8F77-2CF2-4553-B50A-47D116F8D77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0D8F77-2CF2-4553-B50A-47D116F8D77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0D8F77-2CF2-4553-B50A-47D116F8D77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

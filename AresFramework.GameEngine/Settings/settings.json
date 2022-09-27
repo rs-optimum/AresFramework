@@ -1,6 +1,10 @@
 {
-    "WorldName": "Ares Framework",
-    "GamePort": 43594,
+    "ServerSettings": {
+        "ServerName": "AresFramework",
+        "GamePort": 43594,
+        "JaggrabPort": 43595,
+        "EnableGameDebug": true
+    },
     "NLog":{
         "internalLogLevel":"Info",
         "internalLogFile":"/home/optimum/.ares/Logs",
