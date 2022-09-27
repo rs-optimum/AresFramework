@@ -228,7 +228,7 @@ public class ItemContainer
         {
             if (item == null) continue;
 
-            if (item.Id == item)
+            if (item.Id == itemId)
             {
                 amountFound += item.Amount;
             }
